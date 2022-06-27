@@ -20,19 +20,23 @@
 - Find the ending price for the current ticker.
 - Output the data for the current ticker.
 ### the workhorse in our code is the nexted for loop and conditional statements. (insert photo of code). 
+![nested for loops original](https://user-images.githubusercontent.com/107326987/175865378-a11990a9-287c-4c52-b386-d1590382d86a.png)
 
 ### The above language asks our analysis mechanism to first run through all of our ticker names (stock names), and for each ticker loop through each row in our data set to find the values that meet the crieteria. dive deeper and sum the values of all trading. Then we want to find the closing price at the beginning of the year and the closing price at the end of the year. The percent difference between these values delivers our annual rate of return. WithiThis is a powerful analysis that allows our client to make informed financial decisions for their clients in turn.
+![conditional if statements](https://user-images.githubusercontent.com/107326987/175865404-50b268dd-4f6e-4e99-8e16-11e1b736b226.png)
 
 # VBA Code Refactored
 ## After delivery of our first project analysis our client asked if they could use this same mechanism to analyse all stocks for any year. While our script ran effectively 
 ### In order to grab a baseline funcationality we added a timer function to our code. Now anytime our macro was initiated it would deliver 2 outputs; 1) the original stock analysis and 2)a timestampe of how long it took the computer to run the analysis. In order to do this we defined our timer variables and created a function that ran outside of our stock analysis loop. Our original code ran the analysis for each year in just under a second.
 
-insert original photos here.
+![VBA_Challenge_2017_original](https://user-images.githubusercontent.com/107326987/175865290-bd430456-4c34-46f9-93e0-c16f8eafb783.png)
+![VBA_Challenge_2018_original](https://user-images.githubusercontent.com/107326987/175865301-99c3913a-9363-4e84-83d8-cd81bc4c1f04.png)
 
 ### While functionality for our original purposes of limited set of stocks for 2 year was high, you can image if we increase the size of our data set by a magnitude of 100 or 1000, this code could potentially take a very long time to run. If we zoom out, We set about refactoring or editing our code to see if we could find more better structure/architecture for a more efficient loop. This is what we came up with.
 
 ### here are the new run times. 
-insert new timestamp photos.
+![VBA_Challenge_2017](https://user-images.githubusercontent.com/107326987/175865335-6d07687a-772c-4a72-8c2c-09fff7ebde7e.png)
+![VBA_Challenge_2018](https://user-images.githubusercontent.com/107326987/175865349-6310eff6-86bd-468b-b565-efa6f76962eb.png)
 ### we were able to cut down our run times by almost 3/4. 
 
 # Summary
