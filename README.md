@@ -1,12 +1,9 @@
-# stock-analysis
+# Scalable & Interractive VBA Script Stocks Analysis
+## This project has 2 stages. The original brief from our client was to deliver an interactive vba script that would allow analysis of a small set of stocks for a selected year with a click of a button. The client wanted to be able to compare two major elements of stock performance across a stock subset; the total daily volume (the number of times a strock was traded in a day which is a reflection of activity and general health) and the annual rate of return. After delivery of working code to run this analysis the client expanded the scope of their ask - could we use current code to perform analysis on all stocks for any year? Our task then was to revisit our code and assess whether it was scalable - could our current vba script that worked on 12 stocks for 2 years of analysis be effectively used for all stocks over many years? 
 
-# Scalable VBA Script for 2017 & 2018 Stocks Analysis
-## 2 analysis. original analysis from our client to deliver an interactive vba script that would allow analysis of all stocks of a selected year with a click of a button. Our original code worked great, but our client expanded the scope of their ask. The client is now curious about . We then needed to revisit our code to make sure that it was scalable. Could our current vba script that worked on 12 stocks for 2 years of analysis be effectively used for all stocks over many years? The 2nd deliverable in this project is an refactoring of our original code. 
-
-# VBA Code for original analysis
-## The first task in this project was to script code to deliver outputs on total daily volume and annual return for stocks in either 2017 or 2018 financial years. 
-### our primary tool to deliver run this analysis was using nested loops. We wanted to first run through each. . in essence the logic flow of our code in plain text
-
+# VBA Code Stock Analysis for 2017 & 2018
+## The first task in this project was to script code to deliver outputs on total daily volume and annual rate of return for stocks in either 2017 or 2018 financial years. 
+### In order to write cohesive code we wanted to outline our logic flow to ensure our order of operations was correct. 
 - Format the output sheet on the "All Stocks Analysis" worksheet.
 - Initialize an array of all tickers.
 - Prepare for the analysis of tickers.
@@ -19,15 +16,14 @@
 - Find the starting price for the current ticker.
 - Find the ending price for the current ticker.
 - Output the data for the current ticker.
-### the workhorse in our code is the nexted for loop and conditional statements. (insert photo of code). 
+### our primary tools to run this analysis are nested for loops and conditional statements - the workhorse of this mechanism.
 ![nested for loops original](https://user-images.githubusercontent.com/107326987/175865378-a11990a9-287c-4c52-b386-d1590382d86a.png)
-
-### The above language asks our analysis mechanism to first run through all of our ticker names (stock names), and for each ticker loop through each row in our data set to find the values that meet the crieteria. dive deeper and sum the values of all trading. Then we want to find the closing price at the beginning of the year and the closing price at the end of the year. The percent difference between these values delivers our annual rate of return. WithiThis is a powerful analysis that allows our client to make informed financial decisions for their clients in turn.
+### The above language asks our analysis mechanism to first run through the variable that we declared as our stock names. This variable, 'ticker' is assigned all the values of our stock names from out datat sheets for 2017 and 2018. The opening line of code in the photo is the first 'for loop', we are asking the macro for each ticker loop through each row in our data set to find the values that meet the crieteria. our nested for loop is where we run through each row for the defined ticker and use conditional statements. On this deep dive we want to find the closing price at the beginning of the year and the closing price at the end of the year. The percent difference between these values delivers our annual rate of return. This is a powerful analysis that allows our client to make informed financial decisions for their clients in turn.
 ![conditional if statements](https://user-images.githubusercontent.com/107326987/175865404-50b268dd-4f6e-4e99-8e16-11e1b736b226.png)
 
 # VBA Code Refactored
-## After delivery of our first project analysis our client asked if they could use this same mechanism to analyse all stocks for any year. While our script ran effectively 
-### In order to grab a baseline funcationality we added a timer function to our code. Now anytime our macro was initiated it would deliver 2 outputs; 1) the original stock analysis and 2)a timestampe of how long it took the computer to run the analysis. In order to do this we defined our timer variables and created a function that ran outside of our stock analysis loop. Our original code ran the analysis for each year in just under a second.
+## After delivery of our first project analysis our client asked if they could use this same mechanism to analyse all stocks for any year. While our script ran effectively for a smaller dataset,
+### In order to grab a baseline funcationality we added a timer function to our code. Now any time our macro was initiated it would deliver 2 outputs; 1) the original stock analysis and 2)a timestampe of how long it took the computer to run the analysis. In order to do this we defined our timer variables and created a function that ran outside of our stock analysis loop. Our original code ran the analysis for each year in just under a second.
 
 ![VBA_Challenge_2017_original](https://user-images.githubusercontent.com/107326987/175865290-bd430456-4c34-46f9-93e0-c16f8eafb783.png)
 ![VBA_Challenge_2018_original](https://user-images.githubusercontent.com/107326987/175865301-99c3913a-9363-4e84-83d8-cd81bc4c1f04.png)
@@ -37,11 +33,13 @@
 ### here are the new run times. 
 ![VBA_Challenge_2017](https://user-images.githubusercontent.com/107326987/175865335-6d07687a-772c-4a72-8c2c-09fff7ebde7e.png)
 ![VBA_Challenge_2018](https://user-images.githubusercontent.com/107326987/175865349-6310eff6-86bd-468b-b565-efa6f76962eb.png)
-### we were able to cut down our run times by almost 3/4. 
+### we were able to cut down our run times by almost 3/4. We can also see that we've changed the flow of the loops. instead of a primarly loop running through tickers, then rows, then running through our conditional statements for each line to see if they are true, making their way back out of the loop and returning the outputs. now we are claiming our outputs as arrays outside of our loops. 
+
+instead of running through the entire code for every ticker (revisint the same 3000 rows) to output for 1 ticker before starting over again. We are asking the code to run through each line and identify the ticker, then initiate the for loop to run the conditional statements. This way the code only touches each line once, not wasting unecessary time touching each line for every value of stoc, name. IS THIS TRUE????
 
 # Summary
-- original code is user friendly. The script is much more readable and digestible to non code writers
-- refactored code runs more efficiently
+- original code is user friendly. The script is much more readable and digestible to non code writers and it works!
+- refactored code runs more efficiently. however refactoring is an opportunity to pollute working code with bugs. 
 - 
 What are the advantages or disadvantages of refactoring code?
 How do these pros and cons apply to refactoring the original VBA script?
