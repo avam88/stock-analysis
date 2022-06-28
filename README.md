@@ -3,7 +3,7 @@
 
 ## VBA Code Stock Analysis for 2017 & 2018
 ### The first task in this project was to script code to deliver outputs on total daily volume and annual rate of return for stocks in either 2017 or 2018 financial years. 
-In order to write cohesive code we wanted to outline our logic flow to ensure our order of operations was correct. 
+In order to write coherent code we wanted to outline our logic flow to ensure our order of operations was correct. 
 - Format the output sheet on the "All Stocks Analysis" worksheet.
 - Initialize an array of all tickers.
 - Prepare for the analysis of tickers.
@@ -16,7 +16,7 @@ In order to write cohesive code we wanted to outline our logic flow to ensure ou
 - Find the starting price for the current ticker.
 - Find the ending price for the current ticker.
 - Output the data for the current ticker.
-our primary tools to run this analysis were "nested for loops" and conditional statements - the workhorses of this mechanism.
+our primary tools to run this analysis were "nested for loops" and conditional statements.
 
 ![nested for loops original](https://user-images.githubusercontent.com/107326987/176092315-c7a8180a-8d40-4c99-9e37-28abbe9bc891.png)
 
