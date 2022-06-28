@@ -16,6 +16,7 @@ In order to write coherent code we wanted to outline our logic flow to ensure ou
 - Find the starting price for the current ticker.
 - Find the ending price for the current ticker.
 - Output the data for the current ticker.
+
 our primary tools to run this analysis were "nested for loops" and conditional statements.
 
 ![nested for loops original](https://user-images.githubusercontent.com/107326987/176092315-c7a8180a-8d40-4c99-9e37-28abbe9bc891.png)
@@ -33,7 +34,7 @@ In order to grab a baseline funcationality we added a timer function to our code
 While functionality for our original purposes (limited set of stocks, limited number of years) is adequate, we can extrapolate that if we increase the size of our data set by a magnitude of 100 or 1000, this code could potentially take an exorbitant amount of time to run. We set about refactoring or editing our code to see if we could find better structure, syntax and logic flow for a more efficient loop through the data.
 Ultimately it is cumbersome to ask the macro to loop through everyline of the dataset (currently all 3013 rows with values) for each stock name ('ticker'). With 12 separate stocks, we're essentially running through 36,000+ rows of data. What if instead, we could run through our rows just once and grab all the values based on our conditional statements to return the information we need?
 
-INSERT IMAGE OF NEW CODE HERE
+![refactored for loop](https://user-images.githubusercontent.com/107326987/176099015-d1a3f53b-8127-487c-a9c2-66dffaa62d7b.png)
 
 instead of running through the entire code for every ticker to obtain the output information for 1 ticker before starting over again. We are asking the code to run through each line and identify the ticker, then initiate the for loop to run the conditional statements. This way the code only touches each line once, not wasting unecessary time touching each line for every value of stoc, name. IS THIS TRUE???? now we are claiming our outputs as arrays outside of our loops. So the code now tabulates for each row, earmarking the values to a ticker and then once the loop through the rows is finished we loop through our ticker values again to output all the new values to cells corresponding to ticker value.
 
