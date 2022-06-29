@@ -3,25 +3,17 @@
 
 ## VBA Macro : Stock Analysis for 2017 & 2018
 ### The first task in this project was to write a VBA macro to deliver outputs on total daily volume and annual rate of return for 12 separate stocks in either 2017 or 2018 financial years. 
-In order to write coherent code we wanted to first outline our logic flow to ensure our order of operations was correct. 
-- Declare an interactive variable for user input to define analysis year.
-- Create and format an output sheet titled "All Stocks Analysis".
-- Initialize an array of all the stock names - 'tickers'.
-- Initialize variables for the starting price and ending price.
-- Activate the worksheet we want to access data from (2017 or 2018 depending on user input).
-- Find the number of rows to loop over.
-- Loop through the 'ticker' array.
-- Within this loop, loop through all the rows in the data.
-- Find the total volume for the current ticker.
-- Find the starting price for the current ticker.
-- Find the ending price for the current ticker.
-- Output, manipulate and format the data for the current ticker.
-
 Our primary tools to run this analysis were "nested for loops" and conditional statements.
 
 ![nested for loops original](https://user-images.githubusercontent.com/107326987/176092315-c7a8180a-8d40-4c99-9e37-28abbe9bc891.png)
 
-The above language asks our analysis mechanism to first run through the variable that we declared to hold the stock names - all the names of the stocks in our dataset are assigned as values to the 'ticker' variable. The opening line of code in the above image is the first 'for loop' - we are asking the macro to run through every stock name in either the 2017 or 2018 worksheet. Then we enter our 'nested for loop' which asks our macro to loop through each row in the worksheet to find everywhere that our specific 'ticker' value appears. When the macro finds a row with that specific 'ticker' value, then we enter into our conditional statements (highlighted in orange). Our conditional statements use the "if/then" function to check first if a certain criteria is met to then grab information from corresponding cells to output at the end of the loop. Our conditional statements allow us to find the closing price at the beginning of the year and the closing price at the end of the year and the total daily volume for each 'ticker' and ultimately let us perform a mathematical function on our defined variables to find the annual rate of return. This is a powerful analysis that allows our client to make informed financial decisions for their clients in turn.
+The above language asks our analysis mechanism to first run through the variable that we declared to hold the stock names - all the names of the stocks in our dataset are assigned as values to the 'ticker' variable. The opening line of code in the above image is the first 'for loop' - we are asking the macro to run through every stock name in either the 2017 or 2018 worksheet. Then we enter our 'nested for loop' which asks our macro to loop through each row in the worksheet to find everywhere that our specific 'ticker' value appears. When the macro finds a row with that specific 'ticker' value, then we enter into our conditional statements (highlighted in orange). Our conditional statements use the "if/then" function to check first if a certain criteria is met to then grab information from corresponding cells to output at the end of the loop. Our conditional statements allow us to find the closing price at the beginning of the year and the closing price at the end of the year and the total daily volume for each 'ticker' and ultimately let us perform a mathematical function on our defined variables to find the annual rate of return. Ultimately the code contains language to format our output cells depending on their values for immediate readability. This is a powerful analysis that allows our client to make informed financial decisions for their clients in turn.
+
+Using our VBA script to run the analysis, our client can see that these stocks performances vary widely from year to year. 
+
+![Screen Shot 2022-06-28 at 8 11 33 PM](https://user-images.githubusercontent.com/107326987/176343210-e01e580f-7e8b-4a8f-bef4-8f1ee3bba7a4.png)
+![Screen Shot 2022-06-28 at 8 11 47 PM](https://user-images.githubusercontent.com/107326987/176343218-65492aa4-68cf-45b0-ac79-9340d6a8614a.png)
+
 
 ## VBA Code Refactored
 ### While our script ran effectively for a smaller dataset, we need to assess the architecture of our code to determine if it can efficiently analyze much larger data files. Our brief now is to determine whether we can restructure our code to perform the same analysis more quickly and/or using lessing memory.
